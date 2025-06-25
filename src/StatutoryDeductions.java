@@ -36,8 +36,9 @@ public class StatutoryDeductions {
 
     public static double calculateIncomeTax(double salary) {
         if (salary <= 20833) return 0;
-        else if (salary <= 33333) return salary * 0.15;
-        else if (salary <= 66666) return (salary * 0.20) + 22500;
-        else return (salary * 0.25) + 102500;
+        else if (salary <= 33333) return (salary - 20833) * 0.15;
+        else if (salary <= 66666) return ((salary - 33333) * 0.20) + 1875;
+        else if (salary <= 166666) return ((salary - 66666) * 0.25) + 8875;
+        else return 0;
     }
 }
