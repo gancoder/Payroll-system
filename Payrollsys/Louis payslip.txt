@@ -1,0 +1,16 @@
+--- Payslip ---
+Employee ID: EMP-2222
+Name: Louis
+Department: asd
+Basic Salary: 244444.00
+Hourly Rate: 1527.78
+Overtime Hours: 10.00
+Overtime Pay: 19097.19
+Gross Pay: 263541.19
+SSS: 3000.00
+PhilHealth: 2500.00
+PAG-IBIG: 200.00
+Income Tax: 0.00
+Total Deductions: 5700.00
+Net Pay: 257841.19
+----------------
