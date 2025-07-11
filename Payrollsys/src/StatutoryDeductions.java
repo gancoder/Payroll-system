@@ -3,9 +3,13 @@ public class StatutoryDeductions {
 
     public static double getPhilHealth(double basicSalary) {
         if (basicSalary <= 10000) return 250;
-        if (basicSalary >= 100000) return 2500;
-        return 1250;
+        if (basicSalary >= 50000) return 2500;
+        if (basicSalary >= 100000) return 1250;
+            else {
+                return 250 + ((basicSalary - 10000) / 40000) * 1000;}
     }
+
+
 
     public static double getSSSContribution(double salary) {
         double[][] table = {
@@ -36,9 +40,9 @@ public class StatutoryDeductions {
 
     public static double calculateIncomeTax(double salary) {
         if (salary <= 20833) return 0;
-        else if (salary <= 33333) return (salary - 20833) * 0.15;
-        else if (salary <= 66666) return ((salary - 33333) * 0.20) + 1875;
-        else if (salary <= 166666) return ((salary - 66666) * 0.25) + 8875;
+        else if (salary <= 33333) return (salary - 20834) * 0.15;
+        else if (salary <= 66666) return ((salary - 33334) * 0.20) + 1875;
+        else if (salary <= 166666) return ((salary - 66667) * 0.25) + 8875;
         else return 0;
     }
 }
