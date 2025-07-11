@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Payrollsys">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/Payrollsys/Payrollsys.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
