@@ -39,6 +39,7 @@ public class StatutoryDeductions {
         else if (salary <= 33333) return (salary - 20833) * 0.15;
         else if (salary <= 66666) return ((salary - 33333) * 0.20) + 1875;
         else if (salary <= 166666) return ((salary - 66666) * 0.25) + 8875;
-        else return 0;
+        else if (salary <= 666666) return ((salary - 166666) * 0.30) + 33125;
+        else return ((salary - 666666) * 0.35) + 183125;
     }
 }

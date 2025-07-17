@@ -41,7 +41,7 @@ public class Employee {
     }
 
     public double getSSS() {
-        return StatutoryDeductions.getSSSContribution(getGrossPay());
+        return StatutoryDeductions.getSSSContribution(getBasicSalary());
     }
 
     public double getPhilHealth() {

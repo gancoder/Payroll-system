@@ -6,8 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="4a9f688c-15ae-41d5-aedc-44b0cc4cb8b9" name="Changes" comment="proj">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Payrollsys.zip" beforeDir="false" afterPath="$PROJECT_DIR$/Payrollsys.zip" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/PayrollGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PayrollGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/StatutoryDeductions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StatutoryDeductions.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,7 +134,15 @@
       <option name="project" value="LOCAL" />
       <updated>1752070010019</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="proj">
+      <option name="closed" value="true" />
+      <created>1752766604506</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1752766604506</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">

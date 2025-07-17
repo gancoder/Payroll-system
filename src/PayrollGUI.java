@@ -4,6 +4,9 @@ import java.awt.event.ActionEvent;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
+import javax.swing.border.EmptyBorder;
+import javax.swing.border.TitledBorder;
+import javax.swing.border.CompoundBorder;
 
 public class PayrollGUI extends JFrame {
     private JTextField idField, nameField, deptField, salaryField, overtimeField;
@@ -16,71 +19,111 @@ public class PayrollGUI extends JFrame {
     public PayrollGUI() {
         setTitle("ABC SOLUTIONS PAYROLL SYSTEM");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(700, 500);
+        setSize(1080, 720);
         setLocationRelativeTo(null);
         setLayout(new BorderLayout());
+
+        // Title label
+        JLabel titleLabel = new JLabel("ABC SOLUTIONS PAYROLL SYSTEM", SwingConstants.CENTER);
+        titleLabel.setFont(new Font("Arial", Font.BOLD, 28));
+        titleLabel.setBorder(new EmptyBorder(20, 0, 20, 0));
+        titleLabel.setOpaque(true);
+        titleLabel.setBackground(new Color(137, 207, 240)); // Baby blue background
+        titleLabel.setForeground(Color.BLACK);
+        add(titleLabel, BorderLayout.NORTH);
 
         payrollSystem = new PayrollSystem();
         employeeListModel = new DefaultListModel<>();
         employeeJList = new JList<>(employeeListModel);
         JScrollPane listScrollPane = new JScrollPane(employeeJList);
         listScrollPane.setPreferredSize(new Dimension(200, 0));
+        listScrollPane.setBorder(new TitledBorder("Employees"));
+        listScrollPane.getViewport().setBackground(new Color(245, 245, 245));
 
-        JPanel inputPanel = new JPanel(new GridLayout(14, 2, 5, 5));
-        inputPanel.add(new JLabel("Employee ID (EMP-XXXX):"));
+        JPanel inputPanel = new JPanel(new GridLayout(14, 2, 8, 8));
+        inputPanel.setBorder(new TitledBorder("Employee Details"));
+        inputPanel.setBackground(new Color(250, 250, 255));
+        inputPanel.setBorder(new CompoundBorder(
+            new TitledBorder("Employee Details"),
+            new EmptyBorder(15, 15, 15, 15)
+        ));
+        Font labelFont = new Font("Segoe UI", Font.PLAIN, 16);
+        Font fieldFont = new Font("Segoe UI", Font.PLAIN, 16);
+        inputPanel.add(new JLabel("Employee ID (EMP-XXXX):") {{ setFont(labelFont); }});
         idField = new JTextField();
+        idField.setFont(fieldFont);
         inputPanel.add(idField);
-        inputPanel.add(new JLabel("Full Name:"));
+        inputPanel.add(new JLabel("Full Name:") {{ setFont(labelFont); }});
         nameField = new JTextField();
+        nameField.setFont(fieldFont);
         inputPanel.add(nameField);
-        inputPanel.add(new JLabel("Department:"));
+        inputPanel.add(new JLabel("Department:") {{ setFont(labelFont); }});
         deptField = new JTextField();
+        deptField.setFont(fieldFont);
         inputPanel.add(deptField);
-        inputPanel.add(new JLabel("Basic Monthly Salary:"));
+        inputPanel.add(new JLabel("Basic Monthly Salary:") {{ setFont(labelFont); }});
         salaryField = new JTextField();
+        salaryField.setFont(fieldFont);
         inputPanel.add(salaryField);
-        inputPanel.add(new JLabel("Overtime Hours Worked:"));
+        inputPanel.add(new JLabel("Overtime Hours Worked:") {{ setFont(labelFont); }});
         overtimeField = new JTextField();
+        overtimeField.setFont(fieldFont);
         inputPanel.add(overtimeField);
-        inputPanel.add(new JLabel("Hourly Rate:"));
+        inputPanel.add(new JLabel("Hourly Rate:") {{ setFont(labelFont); }});
         hourlyRateLabel = new JLabel();
+        hourlyRateLabel.setFont(fieldFont);
         inputPanel.add(hourlyRateLabel);
-        inputPanel.add(new JLabel("Overtime Pay:"));
+        inputPanel.add(new JLabel("Overtime Pay:") {{ setFont(labelFont); }});
         overtimePayLabel = new JLabel();
+        overtimePayLabel.setFont(fieldFont);
         inputPanel.add(overtimePayLabel);
-        inputPanel.add(new JLabel("Gross Pay:"));
+        inputPanel.add(new JLabel("Gross Pay:") {{ setFont(labelFont); }});
         grossPayLabel = new JLabel();
+        grossPayLabel.setFont(fieldFont);
         inputPanel.add(grossPayLabel);
-        inputPanel.add(new JLabel("SSS Contribution:"));
+        inputPanel.add(new JLabel("SSS Contribution:") {{ setFont(labelFont); }});
         sssLabel = new JLabel();
+        sssLabel.setFont(fieldFont);
         inputPanel.add(sssLabel);
-        inputPanel.add(new JLabel("PhilHealth:"));
+        inputPanel.add(new JLabel("PhilHealth:") {{ setFont(labelFont); }});
         philHealthLabel = new JLabel();
+        philHealthLabel.setFont(fieldFont);
         inputPanel.add(philHealthLabel);
-        inputPanel.add(new JLabel("PAG-IBIG:"));
+        inputPanel.add(new JLabel("PAG-IBIG:") {{ setFont(labelFont); }});
         pagIbigLabel = new JLabel();
+        pagIbigLabel.setFont(fieldFont);
         inputPanel.add(pagIbigLabel);
-        inputPanel.add(new JLabel("Income Tax:"));
+        inputPanel.add(new JLabel("Income Tax:") {{ setFont(labelFont); }});
         incomeTaxLabel = new JLabel();
+        incomeTaxLabel.setFont(fieldFont);
         inputPanel.add(incomeTaxLabel);
-        inputPanel.add(new JLabel("Total Deductions:"));
+        inputPanel.add(new JLabel("Total Deductions:") {{ setFont(labelFont); }});
         totalDedLabel = new JLabel();
+        totalDedLabel.setFont(fieldFont);
         inputPanel.add(totalDedLabel);
-        inputPanel.add(new JLabel("Net Pay:"));
+        inputPanel.add(new JLabel("Net Pay:") {{ setFont(labelFont); }});
         netPayLabel = new JLabel();
+        netPayLabel.setFont(fieldFont);
         inputPanel.add(netPayLabel);
 
-        JPanel buttonPanel = new JPanel(new GridLayout(1, 5, 5, 5));
+        JPanel buttonPanel = new JPanel(new GridLayout(1, 5, 10, 10));
+        buttonPanel.setBorder(new EmptyBorder(10, 0, 0, 0));
+        buttonPanel.setBackground(new Color(240, 240, 250));
         JButton calcButton = new JButton("Calculate");
         JButton addButton = new JButton("Add Employee");
         JButton removeButton = new JButton("Remove Employee");
         JButton payslipButton = new JButton("Generate Payslip");
+        calcButton.setFont(labelFont);
+        addButton.setFont(labelFont);
+        removeButton.setFont(labelFont);
+        payslipButton.setFont(labelFont);
         buttonPanel.add(calcButton);
         buttonPanel.add(addButton);
         buttonPanel.add(removeButton);
         buttonPanel.add(payslipButton);
 
         JPanel leftPanel = new JPanel(new BorderLayout());
+        leftPanel.setBackground(new Color(245, 245, 255));
         leftPanel.add(inputPanel, BorderLayout.CENTER);
         leftPanel.add(buttonPanel, BorderLayout.SOUTH);
 
