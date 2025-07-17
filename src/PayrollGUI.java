@@ -75,12 +75,10 @@ public class PayrollGUI extends JFrame {
         JButton addButton = new JButton("Add Employee");
         JButton removeButton = new JButton("Remove Employee");
         JButton payslipButton = new JButton("Generate Payslip");
-        JButton viewButton = new JButton("View Employees");
         buttonPanel.add(calcButton);
         buttonPanel.add(addButton);
         buttonPanel.add(removeButton);
         buttonPanel.add(payslipButton);
-        buttonPanel.add(viewButton);
 
         JPanel leftPanel = new JPanel(new BorderLayout());
         leftPanel.add(inputPanel, BorderLayout.CENTER);
@@ -93,7 +91,6 @@ public class PayrollGUI extends JFrame {
         addButton.addActionListener((ActionEvent e) -> addEmployee());
         removeButton.addActionListener((ActionEvent e) -> removeEmployee());
         payslipButton.addActionListener((ActionEvent e) -> generatePayslip());
-        viewButton.addActionListener((ActionEvent e) -> refreshEmployeeList());
         employeeJList.addListSelectionListener(e -> {
             if (!e.getValueIsAdjusting()) {
                 int idx = employeeJList.getSelectedIndex();
